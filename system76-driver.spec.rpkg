@@ -1,0 +1,109 @@
+# The following tag is to get correct syntax highlighting for this file in vim text editor
+# vim: syntax=spec
+
+Name:       {{{ git_dir_name }}}
+Version:    {{{ git_dir_version }}}
+Release:    1%{?dist}
+Summary:    {{{ git_dir_name }}} 
+License:    GPLv3
+URL:        https://github.com/szydell/system76-driver
+
+# Detailed information about the source Git repository and the source commit
+# for the created rpm package
+VCS:        {{{ git_dir_vcs }}}
+
+# git_dir_pack macro places the repository content (the source files) into a tarball
+# and returns its filename. The tarball will be used to build the rpm.
+Source:     {{{ git_dir_pack }}}
+
+#Packages required for build
+#BuildRequires: dbus-devel
+BuildRequires: python3-devel
+
+#Packages required to work
+#Requires:
+
+%{?python_enable_dependency_generator}
+
+# More detailed description of the package
+%description
+System76 Driver
+-----
+ Drivers installer CLI and GTK version.
+
+
+%define debug_package %{nil}
+
+#--
+%prep
+{{{ git_dir_setup_macro }}}
+
+%build
+CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
+
+
+%install
+rm -rf %{buildroot}
+install -D -m 0755 system76-firmware  -t "%{buildroot}%{_bindir}"
+install -D -m 0755 system76-driver-pkexec -t "%{buildroot}%{_bindir}"
+install -D -m 0755 system76-firmware-pkexec -t "%{buildroot}%{_bindir}"
+
+%{__python3} setup.py install --skip-build --root $RPM_BUILD_ROOT
+rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
+
+
+
+#com.system76.pkexec.system76-driver.policy usr/share/polkit-1/actions/
+#com.system76.pkexec.system76-firmware.policy usr/share/polkit-1/actions/
+#system76-firmware.desktop usr/share/applications/
+#!system76-nm-restart /lib/systemd/system-sleep/
+#!system76-third-party-mirrors.cfg /etc/update-manager/release-upgrades.d/
+#!system76-driver-pkexec usr/bin/
+#!system76-firmware-pkexec usr/bin/
+#system76-firmware-dialog usr/lib/system76-driver/
+#system76-firmware-autostart.desktop etc/xdg/autostart/
+#system76-daemon usr/lib/system76-driver/
+#system76-backlight-daemon usr/lib/system76-driver/
+#debian/system76-driver-backlight.service usr/lib/systemd/user/
+#system76-driver-backlight.desktop etc/xdg/autostart/
+#debian/source_system76-driver.py usr/share/apport/package-hooks/
+
+
+# do after installation
+%post
+#sed -i 's/PACKAGE_VERSION="#MODULE_VERSION#"/PACKAGE_VERSION="{{{ git_dir_version }}}"/g' %{_usrsrc}/system76-{{{ git_dir_version }}}/dkms.conf
+# change module id also in C code.
+#sed -i 's/MODULE_VERSION("\(.*\)");/MODULE_VERSION("\1-{{{ git_dir_version }}}");/g' %{_usrsrc}/system76-{{{ git_dir_version }}}/system76.c
+
+#/usr/bin/env dkms add -m system76 -v {{{ git_dir_version }}} 
+#/usr/bin/env dkms build -m system76 -v {{{ git_dir_version }}}
+#/usr/bin/env dkms install -m system76 -v {{{ git_dir_version }}}
+
+# do before uninstallation
+%preun
+#/usr/bin/env dkms remove -m system76 -v {{{ git_dir_version }}} --all
+
+# do after unistallation
+%postun
+#rmdir %{_usrsrc}/system76-{{{ git_dir_version }}} 2>/dev/null
+
+
+# Those files will be in the rpm
+%files
+%doc README LICENSE
+%{_bindir}/system76-firmware
+%{_bindir}/system76-driver-pkexec
+%{_bindir}/system76-firmware-pkexec
+#from setup.py
+%{_bindir}/system76-driver
+%{_bindir}/system76-driver-cli
+%{python3_sitelib}/system76driver-19.04.12-py3.7.egg-info
+%{python3_sitelib}/system76driver/*
+%{_datadir}/applications/system76-driver.desktop
+%{_datadir}/icons/hicolor/scalable/apps/system76-driver.svg
+
+# Changelog
+%changelog
+{{{ git_dir_changelog }}}
+
+
