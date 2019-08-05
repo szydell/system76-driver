@@ -1,3 +1,4 @@
+[![Copr build status](https://copr.fedorainfracloud.org/coprs/szydell/system76/package/system76-driver/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/szydell/system76/package/system76-driver/)
 # System76 Driver
 
 This program installs drivers and provides restore functionality for System76
