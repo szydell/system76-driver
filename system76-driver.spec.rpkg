@@ -90,7 +90,7 @@ rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
 
 # Those files will be in the rpm
 %files
-%doc README LICENSE
+%doc README.md LICENSE
 %{_bindir}/system76-firmware
 %{_bindir}/system76-driver-pkexec
 %{_bindir}/system76-firmware-pkexec
