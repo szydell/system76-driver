@@ -101,7 +101,7 @@ rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
 #from setup.py
 %{_bindir}/system76-driver
 %{_bindir}/system76-driver-cli
-%{python3_sitelib}/system76driver-19.04.12-py3.7.egg-info
+%{python3_sitelib}/system76driver*.egg-info
 %{python3_sitelib}/system76driver/*
 %{_datadir}/applications/system76-driver.desktop
 %{_datadir}/icons/hicolor/scalable/apps/system76-driver.svg
