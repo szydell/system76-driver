@@ -93,11 +93,8 @@ rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
 # Those files will be in the rpm
 %files
 %doc README.md LICENSE
-#%{_bindir}/system76-firmware
 %{_bindir}/system76-driver-pkexec
-#%{_bindir}/system76-firmware-pkexec
 %{_datadir}/polkit-1/actions/com.system76.pkexec.system76-driver.policy
-#%{_datadir}/polkit-1/actions/com.system76.pkexec.system76-firmware.policy
 #from setup.py
 %{_bindir}/system76-driver
 %{_bindir}/system76-driver-cli
