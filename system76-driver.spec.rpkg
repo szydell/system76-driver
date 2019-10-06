@@ -44,11 +44,11 @@ CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
 
 %install
 rm -rf %{buildroot}
-install -D -m 0755 system76-firmware  -t "%{buildroot}%{_bindir}"
+#install -D -m 0755 system76-firmware  -t "%{buildroot}%{_bindir}"
 install -D -m 0755 system76-driver-pkexec -t "%{buildroot}%{_bindir}"
-install -D -m 0755 system76-firmware-pkexec -t "%{buildroot}%{_bindir}"
+#install -D -m 0755 system76-firmware-pkexec -t "%{buildroot}%{_bindir}"
 install -D -m 0644 com.system76.pkexec.system76-driver.policy -t "%{buildroot}%{_datadir}/polkit-1/actions/"
-install -D -m 0644 com.system76.pkexec.system76-firmware.policy -t "%{buildroot}%{_datadir}/polkit-1/actions/"
+#install -D -m 0644 com.system76.pkexec.system76-firmware.policy -t "%{buildroot}%{_datadir}/polkit-1/actions/"
 
 %{__python3} setup.py install --skip-build --root $RPM_BUILD_ROOT
 rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
@@ -93,11 +93,11 @@ rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
 # Those files will be in the rpm
 %files
 %doc README.md LICENSE
-%{_bindir}/system76-firmware
+#%{_bindir}/system76-firmware
 %{_bindir}/system76-driver-pkexec
-%{_bindir}/system76-firmware-pkexec
+#%{_bindir}/system76-firmware-pkexec
 %{_datadir}/polkit-1/actions/com.system76.pkexec.system76-driver.policy
-%{_datadir}/polkit-1/actions/com.system76.pkexec.system76-firmware.policy
+#%{_datadir}/polkit-1/actions/com.system76.pkexec.system76-firmware.policy
 #from setup.py
 %{_bindir}/system76-driver
 %{_bindir}/system76-driver-cli
