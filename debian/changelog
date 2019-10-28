@@ -1,3 +1,9 @@
+system76-driver (19.04.19) disco; urgency=low
+
+  * Depend on system76-acpi-dkms
+
+ -- Jeremy Soller <jeremy@system76.com>  Fri, 11 Oct 2019 12:08:01 -0600
+
 system76-driver (19.04.18) disco; urgency=low
 
   * Use HWE instead of HWE edge kernel on 18.04
