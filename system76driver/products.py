@@ -807,6 +807,10 @@ PRODUCTS = {
             actions.nvreg_enablebacklighthandler,
         ],
     },
+    'serw12': {
+        'name': 'Serval WS',
+        'drivers': [],
+    },
 
     # Silverback:
     'silw1': {
@@ -850,6 +854,10 @@ PRODUCTS = {
         'drivers': [],
     },
     'thelio-r1': {
+        'name': 'Thelio',
+        'drivers': [],
+    },
+    'thelio-r2': {
         'name': 'Thelio',
         'drivers': [],
     },
