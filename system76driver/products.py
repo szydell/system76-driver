@@ -119,6 +119,10 @@ PRODUCTS = {
             actions.nvreg_enablebacklighthandler,
         ],
     },
+    'bonw14': {
+        'name': 'Bonobo WS',
+        'drivers': [],
+    },
 
     # Darter:
     'daru1': {
@@ -281,13 +285,14 @@ PRODUCTS = {
 	],
     },
     'gaze14': {
-        'name': 'Gazelle Pro',
+        'name': 'Gazelle',
         'drivers': [
             actions.blacklist_nvidia_i2c,
+            actions.i8042_nomux,
         ],
     },
     'gaze15': {
-        'name': 'Gazelle Pro',
+        'name': 'Gazelle',
         'drivers': [
             actions.blacklist_nvidia_i2c,
         ],
@@ -594,6 +599,12 @@ PRODUCTS = {
             actions.blacklist_nvidia_i2c,
         ],
     },
+    'oryp6': {
+        'name': 'Oryx Pro',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+        ],
+    },
 
     # Pangolin:
     'panp4i': {
@@ -865,6 +876,10 @@ PRODUCTS = {
         'name': 'Thelio',
         'drivers': [],
     },
+    'thelio-b2': {
+        'name': 'Thelio',
+        'drivers': [],
+    },
     'thelio-r1': {
         'name': 'Thelio',
         'drivers': [],
@@ -893,8 +908,16 @@ PRODUCTS = {
         'name': 'Thelio Major',
         'drivers': [
             actions.usb_audio_ignore_ctl_error,
-            actions.usb_audio_load_microphone,
-            actions.usb_audio_load_spdif,
+            actions.remove_usb_audio_load_microphone,
+            actions.remove_usb_audio_load_spdif,
+        ],
+    },
+    'thelio-major-r2.1': {
+        'name': 'Thelio Major',
+        'drivers': [
+            actions.usb_audio_ignore_ctl_error,
+            actions.remove_usb_audio_load_microphone,
+            actions.remove_usb_audio_load_spdif,
         ],
     },
     'thelio-massive-b1': {
@@ -909,8 +932,16 @@ PRODUCTS = {
         'name': 'Thelio Mega',
         'drivers': [
             actions.usb_audio_ignore_ctl_error,
-            actions.usb_audio_load_microphone,
-            actions.usb_audio_load_spdif,
+            actions.remove_usb_audio_load_microphone,
+            actions.remove_usb_audio_load_spdif,
+        ],
+    },
+    'thelio-mega-r1.1': {
+        'name': 'Thelio Mega',
+        'drivers': [
+            actions.usb_audio_ignore_ctl_error,
+            actions.remove_usb_audio_load_microphone,
+            actions.remove_usb_audio_load_spdif,
         ],
     },
 

@@ -8,15 +8,15 @@ Build-Depends: debhelper (>= 9),
     gir1.2-gtk-3.0,
     gir1.2-notify-0.7,
     pyflakes3,
-    python3-all (>= 3.4),
+    python3-all (>= 3.6),
     python3-dbus,
     python3-evdev,
     python3-gi,
     python3-distro,
     python3-systemd,
     xbacklight
-Standards-Version: 3.9.6
-X-Python3-Version: >= 3.4
+Standards-Version: 4.5.0
+X-Python3-Version: >= 3.6
 Homepage: https://launchpad.net/system76-driver
 
 Package: system76-driver
@@ -53,9 +53,10 @@ Description: Universal driver for System76 computers
 Package: system76-driver-nvidia
 Architecture: all
 Depends: ${misc:Depends},
-    nvidia-driver-440,
+    nvidia-driver-455,
     system76-driver (>= ${binary:Version}),
     ubuntu-drivers-common,
+Recommends: amd-ppt-bin
 Description: Latest nvidia driver for System76 computers
  This dummy package depends on the latest driver tested with and recommended for
  System76 products with an nvidia GPU.

@@ -1,3 +1,59 @@
+system76-driver (20.04.15) focal; urgency=low
+
+  * Update NVIDIA driver to 455
+
+ -- Jeremy Soller <jeremy@system76.com>  Thu, 22 Oct 2020 09:16:13 -0600
+
+system76-driver (20.04.14) focal; urgency=low
+
+  * Add lsblk -f and df -h output to the logs
+
+ -- Jeremy Soller <jeremy@system76.com>  Fri, 25 Sep 2020 10:21:53 -0600
+
+system76-driver (20.04.13) focal; urgency=low
+
+  * Add thelio-major-r2.1 and thelio-mega-r1.1
+
+ -- Jeremy Soller <jeremy@system76.com>  Mon, 31 Aug 2020 10:34:53 -0600
+
+system76-driver (20.04.12) focal; urgency=low
+
+  * Add bonw14
+
+ -- Jeremy Soller <jeremy@system76.com>  Wed, 19 Aug 2020 07:59:30 -0600
+
+system76-driver (20.04.11) focal; urgency=low
+
+  * Add i8042.nomux to kernel boot parameters on gaze14 to prevent keyboard issue after suspend/resume
+
+ -- Jeremy Soller <jeremy@system76.com>  Mon, 22 Jun 2020 15:47:38 -0600
+
+system76-driver (20.04.10) focal; urgency=low
+
+  * Add oryp6
+  * USB audio fixup in user daemon instead of pulseaudio config
+
+ -- Jeremy Soller <jeremy@system76.com>  Wed, 17 Jun 2020 11:50:04 -0600
+
+system76-driver (20.04.9) focal; urgency=low
+
+  * Recommend amd-ppt-bin in system76-driver-nvidia
+
+ -- Jeremy Soller <jeremy@system76.com>  Tue, 09 Jun 2020 10:22:39 -0600
+
+system76-driver (20.04.8) focal; urgency=low
+
+  * Add thelio-b2
+
+ -- Jeremy Soller <jeremy@system76.com>  Wed, 20 May 2020 08:26:21 -0600
+
+system76-driver (20.04.7) focal; urgency=low
+
+  * Add logging of the fstab file to assist with OS upgrades
+  * Add logging of the sources.list file and the sources.list.d directory
+
+ -- Jeremy Soller <jeremy@system76.com>  Mon, 18 May 2020 10:21:14 -0600
+
 system76-driver (20.04.6) focal; urgency=low
 
   * Add addw2 and gaze14
@@ -150,8 +206,8 @@ system76-driver (19.04.7) disco; urgency=low
 
   * Improvements for kernelstub option modifications
 
- -- shpurk benjamin@system76.com  Mon, 25 Feb 2019 14:45:53 -0700
-
+ -- shpurk <benjamin@system76.com>  Mon, 25 Feb 2019 14:45:53 -0700
+ 
 system76-driver (19.04.6) disco; urgency=low
 
   * Add snd_hda_intel.probe_mask=1 for oryp5
@@ -206,8 +262,8 @@ system76-driver (18.10.4) cosmic; urgency=low
 
   * Add meer4
 
- -- shpurk benjamin@system76.com  Tue, 04 Dec 2018 15:58:21 -0700
-
+ -- shpurk <benjamin@system76.com>  Tue, 04 Dec 2018 15:58:21 -0700
+ 
 system76-driver (18.10.3) cosmic; urgency=low
 
   * Add thelio-b1
