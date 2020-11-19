@@ -1,3 +1,9 @@
+system76-driver (20.04.16) focal; urgency=low
+
+  * Add galp5, lemp10, pang10, and thelio-mira-r1
+
+ -- Jeremy Soller <jeremy@system76.com>  Thu, 19 Nov 2020 10:14:51 -0700
+
 system76-driver (20.04.15) focal; urgency=low
 
   * Update NVIDIA driver to 455
