@@ -158,6 +158,10 @@ PRODUCTS = {
             actions.headset_darp_fixup,
         ],
     },
+    'darp7': {
+        'name': 'Darter Pro',
+        'drivers': [],
+    },
 
     # Galago:
     'galu1': {
@@ -200,7 +204,9 @@ PRODUCTS = {
     },
     'galp5': {
         'name': 'Galago Pro',
-        'drivers': [],
+        'drivers': [
+            actions.nvidia_dynamic_power_one,
+        ],
     },
 
     # Gazelle:
@@ -299,6 +305,7 @@ PRODUCTS = {
         'name': 'Gazelle',
         'drivers': [
             actions.blacklist_nvidia_i2c,
+            actions.i8042_nomux,
         ],
     },
     'gazu1': {
@@ -611,6 +618,7 @@ PRODUCTS = {
         'name': 'Oryx Pro',
         'drivers': [
             actions.blacklist_nvidia_i2c,
+            actions.i915_initramfs,
         ],
     },
 
@@ -845,7 +853,10 @@ PRODUCTS = {
     'serw12': {
         'name': 'Serval WS',
         'drivers': [
-            actions.firefox_enablewebrender144,
+            actions.firefox_framerate144,
+            actions.firefox_unsetwebrender,
+            actions.nvidia_forcefullcompositionpipeline,
+            actions.i8042_nomux,
         ],
     },
 

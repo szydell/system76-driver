@@ -1,3 +1,39 @@
+system76-driver (20.04.22) focal; urgency=low
+
+  * Add darp7
+
+ -- Jeremy Soller <jeremy@system76.com>  Tue, 29 Dec 2020 09:38:06 -0700
+
+system76-driver (20.04.21) focal; urgency=low
+
+  * oryp6: Add i915 driver to initramfs
+
+ -- Jeremy Soller <jeremy@system76.com>  Tue, 29 Dec 2020 08:05:53 -0700
+
+system76-driver (20.04.20) focal; urgency=low
+
+  * gaze15 & serw12: Add i8042.nomux option to prevent keyboard issues after suspend.
+
+ -- Jeremy Soller <jeremy@system76.com>  Fri, 18 Dec 2020 12:52:01 -0700
+
+system76-driver (20.04.19) focal; urgency=low
+
+  * galp5: Set NVIDIA dynamic power to recommended value
+
+ -- Jeremy Soller <jeremy@system76.com>  Tue, 15 Dec 2020 19:03:53 -0700
+
+system76-driver (20.04.18) focal; urgency=low
+
+  * serw12: set NVIDIA ForceFullCompositionPipeline (and unset Firefox WebRender)
+
+ -- Jeremy Soller <jeremy@system76.com>  Mon, 14 Dec 2020 14:49:21 -0700
+
+system76-driver (20.04.17) focal; urgency=low
+
+  * Set card name to 'Audio' for thelio-mega-r1
+
+ -- Jeremy Soller <jeremy@system76.com>  Wed, 25 Nov 2020 13:09:49 -0700
+
 system76-driver (20.04.16) focal; urgency=low
 
   * Add galp5, lemp10, pang10, and thelio-mira-r1
@@ -213,7 +249,7 @@ system76-driver (19.04.7) disco; urgency=low
   * Improvements for kernelstub option modifications
 
  -- shpurk <benjamin@system76.com>  Mon, 25 Feb 2019 14:45:53 -0700
- 
+
 system76-driver (19.04.6) disco; urgency=low
 
   * Add snd_hda_intel.probe_mask=1 for oryp5
@@ -269,7 +305,7 @@ system76-driver (18.10.4) cosmic; urgency=low
   * Add meer4
 
  -- shpurk <benjamin@system76.com>  Tue, 04 Dec 2018 15:58:21 -0700
- 
+
 system76-driver (18.10.3) cosmic; urgency=low
 
   * Add thelio-b1

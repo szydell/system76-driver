@@ -101,6 +101,11 @@ def update_kernelstub():
     SubProcess.check_call(['kernelstub'])
 
 
+def update_initramfs():
+    log.info('Calling `update-initramfs`...')
+    SubProcess.check_call(['update-initramfs', '-u'])
+
+
 def parse_lspci(text):
     """
     Parse output of `lspci -vmnn`.
@@ -155,6 +160,7 @@ class Action:
     _isneeded = None
     _description = None
     update_grub = False
+    update_initramfs = False
 
     @property
     def isneeded(self):
@@ -256,6 +262,10 @@ class ActionRunner:
             else:
                 yield _('Running `update-grub`')
                 update_grub()
+
+        if any(action.update_initramfs for action in self.needed):
+            yield _('Running `update-initramfs`')
+            update_initramfs()
 
 
 class FileAction(Action):
@@ -573,7 +583,7 @@ class i8042_nomux(GrubAction):
     """
     Add i8042.nomux to GRUB_CMDLINE_LINUX_DEFAULT
 
-    This prevents keyboard issues after suspend/resume on gaze14.
+    This prevents keyboard issues after suspend/resume on some products.
     """
 
     add = ('i8042.nomux',)
@@ -1384,10 +1394,58 @@ class remove_usb_audio_load_spdif(Action):
         content = '\n'.join(self.iter_lines())
         self.atomic_write(content)
 
-class firefox_enablewebrender144(FileAction):
-    relpath = ('usr', 'lib', 'firefox', 'defaults', 'pref', 's76-webrender.js')
-    content = 'pref("gfx.webrender.all", true);\n'
-    content += 'pref("layout.frame_rate", 144);\n'
+class firefox_framerate144(FileAction):
+    relpath = ('usr', 'lib', 'firefox', 'defaults', 'pref', 's76-framerate.js')
+    content = 'pref("layout.frame_rate", 144);\n'
 
     def describe(self):
-        return _('Enable WebRender in Firefox by default')
+        return _('Set Firefox framerate to 144fps (for 144Hz display)')
+
+class firefox_unsetwebrender(FileAction):
+    relpath = ('usr', 'lib', 'firefox', 'defaults', 'pref', 's76-webrender.js')
+
+    def describe(self):
+        return _('Remove unnecessary WebRender override for Firefox')
+
+    def __init__(self, rootdir='/'):
+        self.filename = path.join(rootdir, *self.relpath)
+
+    def get_isneeded(self):
+        return os.path.exists(self.filename)
+
+    def perform(self):
+        try:
+            os.remove(self.filename)
+        except:
+            pass
+
+class nvidia_forcefullcompositionpipeline(FileAction):
+    def describe(self):
+        return _('Enable ForceFullCompositionPipeline in the NVIDIA driver')
+
+    def __init__(self, etcdir='/etc'):
+        self.filename = path.join(etcdir, 'profile.d', 's76-nvidia-fullcomp.sh')
+
+    def get_isneeded(self):
+        return not os.path.exists(self.filename)
+
+    def perform(self):
+        content = '# Added by system76-driver.\n'
+        content += '# Force a full composition pipeline to prevent stuttering.\n'
+        content += 'nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"\n'
+        self.atomic_write(content)
+
+class nvidia_dynamic_power_one(FileAction):
+    relpath = ('etc', 'modprobe.d', 'zzz-s76-nvidia-dynpwr.conf')
+    content = 'options nvidia NVreg_DynamicPowerManagement=0x01\n'
+
+    def describe(self):
+        return _('Set NVIDIA dynamic power to recommended value')
+
+class i915_initramfs(FileAction):
+    update_initramfs = True
+    relpath = ('usr', 'share', 'initramfs-tools', 'modules.d', 's76-i915-initramfs.conf')
+    content = '# Added by system76-driver\ni915\n'
+
+    def describe(self):
+        return _('Add i915 driver to initramfs')
