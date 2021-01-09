@@ -15,7 +15,7 @@ version_in_changelog=$(grep -E "system76-driver \([[:digit:]]+\.[[:digit:]]+\.[[
 _tmp=${version_in_changelog%%)*}
 version=${_tmp##*\(}
 
-_tmp=$(git tag --list system76-driver-"$version"-'*' | sort -r)
+_tmp=$(git tag --list system76-driver-"$version"-'*' | sort -r | head -1)
 release=${_tmp##*-}
 
 if [ "z$release" == "z" ]; then
