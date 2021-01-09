@@ -29,6 +29,10 @@ else
 	((release++))
 fi
 
+# as a workaround set static version in spec file
+sed -i "s#^Version:    .*#Version:    $version#" system76-driver.spec.rpkg
 
 # rpkg tag
 rpkg tag --version="$version"  --release="$release"
+
+
