@@ -1,3 +1,9 @@
+system76-driver (20.04.23) focal; urgency=low
+
+  * Move serw12 ForceFullCompositionPipeline from profile to xprofile
+
+ -- Jeremy Soller <jeremy@system76.com>  Fri, 08 Jan 2021 14:46:23 -0700
+
 system76-driver (20.04.22) focal; urgency=low
 
   * Add darp7
