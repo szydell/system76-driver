@@ -13,9 +13,8 @@
 
 version_in_changelog=$(grep -E "system76-driver \([[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+\)" debian/changelog | head -1)
 tmp=${version_in_changelog%%)*}
-tmp=${tmp##*\(}
-release=${tmp##*\.}
-version=${tmp%%\.$release}
+version=${tmp##*\(}
+
 
 # rpkg tag
-rpkg tag --version="$version" --release="$release"
+rpkg tag --version="$version"
