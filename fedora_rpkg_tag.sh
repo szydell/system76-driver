@@ -12,9 +12,23 @@
 # main
 
 version_in_changelog=$(grep -E "system76-driver \([[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+\)" debian/changelog | head -1)
-tmp=${version_in_changelog%%)*}
-version=${tmp##*\(}
+_tmp=${version_in_changelog%%)*}
+version=${_tmp##*\(}
+
+_tmp=$(git tag --list system76-driver-"$version"-'*' | sort -r)
+release=${_tmp##*-}
+
+if [ "z$release" == "z" ]; then
+	release=1
+else
+	if ! [[ "$release" =~ ^[0-9]+$ ]]; then
+		echo "Release should be a number"
+		exit 2
+	fi
+	# increment release number
+	((release++))
+fi
 
 
 # rpkg tag
-rpkg tag --version="$version"
+rpkg tag --version="$version"  --release="$release"
