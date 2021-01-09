@@ -3,7 +3,7 @@
 # Parse debian/changelog and set package version same as on PopOS! and Ubuntu
 # 
 # ----------------------------------------------------------------------------
-# 2021-02-01 Marcin Szydelski
+# 2021-01-09 Marcin Szydelski
 #		init
 
 # config
@@ -12,7 +12,10 @@ outdir="$(pwd)/.rpkg-build"
 # verification
 [ -f debian/changelog ] || { echo "No debian/changelog found."; exit 1; }
 
-# main
+# fetch upstream
+git fetch upstream
+
+
 
 version_in_changelog=$(grep -E "system76-driver \([[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+\)" debian/changelog | head -1)
 _tmp=${version_in_changelog%%)*}
