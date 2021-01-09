@@ -15,7 +15,7 @@ version_in_changelog=$(grep -E "system76-driver \([[:digit:]]+\.[[:digit:]]+\.[[
 _tmp=${version_in_changelog%%)*}
 version=${_tmp##*\(}
 
-_tmp=$(git tag --list system76-driver-"$version"-'*' | sort -r | head -1)
+_tmp=$(git tag --list system76-driver-"$version"-'*' | sort -r -n | head -1)
 release=${_tmp##*-}
 
 if [ "z$release" == "z" ]; then
@@ -31,8 +31,9 @@ fi
 
 # as a workaround set static version in spec file
 sed -i "s#^Version:    .*#Version:    $version#" system76-driver.spec.rpkg
-
+sed -i "s#^Release:    .*#Release:    $release#" system76-driver.spec.rpkg
+git commit -m"bump Version to: $version-$release" system76-driver.spec.rpkg
 # rpkg tag
 rpkg tag --version="$version"  --release="$release"
-
+rpkg local
 
