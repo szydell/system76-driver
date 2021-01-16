@@ -14,6 +14,9 @@ outdir="$(pwd)/.rpkg-build"
 
 # fetch upstream
 git fetch upstream
+# merge
+git checkout master
+git merge upstream/master
 
 
 
