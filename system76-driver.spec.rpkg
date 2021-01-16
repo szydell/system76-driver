@@ -3,7 +3,7 @@
 
 Name:       {{{ git_dir_name }}}
 Version:    20.04.24
-Release:    1
+Release:    2
 Summary:    System76 Driver CLI and GTK installer 
 License:    GPLv3
 URL:        https://github.com/szydell/system76-driver
