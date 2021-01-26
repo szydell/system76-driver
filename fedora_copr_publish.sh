@@ -42,12 +42,13 @@ fi
 sed -i "s#^Version:    .*#Version:    $version#" system76-driver.spec.rpkg
 sed -i "s#^Release:    .*#Release:    $release#" system76-driver.spec.rpkg
 git commit -m"bump Version to: $version-$release" system76-driver.spec.rpkg
-# rpkg tag
-rpkg tag --version="$version"  --release="$release"
 
 #test & build srpm
 mkdir "$outdir"
 rpkg local --outdir="$outdir" || { echo "rpkg local failed"; exit 4; }
+
+# rpkg tag
+rpkg tag --version="$version"  --release="$release"
 
 srpm="$(ls .rpkg-build/system76-driver-*.src.rpm)"
 
