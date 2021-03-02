@@ -621,6 +621,13 @@ PRODUCTS = {
             actions.i915_initramfs,
         ],
     },
+    'oryp7': {
+        'name': 'Oryx Pro',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+            actions.i915_initramfs,
+        ],
+    },
 
     # Pangolin:
     'panp4i': {
@@ -911,7 +918,9 @@ PRODUCTS = {
     },
     'thelio-r2': {
         'name': 'Thelio',
-        'drivers': [],
+        'drivers': [
+            actions.hda_disable_power_save,
+        ],
     },
     'thelio-major-b1': {
         'name': 'Thelio Major',
