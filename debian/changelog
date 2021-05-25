@@ -1,3 +1,15 @@
+system76-driver (20.04.33) focal; urgency=low
+
+  * Apply meer6 audio fix
+
+ -- Jeremy Soller <jeremy@system76.com>  Fri, 14 May 2021 16:07:54 -0600
+
+system76-driver (20.04.32) focal; urgency=low
+
+  * Add meer6
+
+ -- Jeremy Soller <jeremy@system76.com>  Wed, 12 May 2021 14:21:14 -0600
+
 system76-driver (20.04.31) focal; urgency=low
 
   * Add pang10 WD Blue drive fix
