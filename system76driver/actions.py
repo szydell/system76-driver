@@ -616,6 +616,19 @@ class pang10_nvme_fix(GrubAction):
     def describe(self):
         return _('Change WD Blue drive pstate latency, fixing crashes on pang10')
 
+class integrated_11th_gen_intel_fix(GrubAction):
+    """
+    Add i915.force_probe=4c8a to GRUB_CMDLINE_LINUX_DEFAULT
+
+    This fixes the i915 driver on 11th gen Intel integrated graphics.
+    It was implemented for mira-b1 and thelio-b2.
+    """
+
+    add = ('i915.force_probe=4c8a',)
+
+    def describe(self):
+        return _('Force i915 driver to load on 11th gen Intel integrated graphics')
+
 class gfxpayload_text(Action):
     update_grub = True
     comment = '# Added by system76-driver:'
@@ -1538,3 +1551,24 @@ class displayport1_force_enable_audio(FileAction):
         content += '# Force enable audio output from DP-1 (physical HDMI 1 port.)\n'
         content += 'xrandr --output DP-1 --set audio on\n'
         self.atomic_write(content)
+
+class meer5_audio_hdajackretask(FileAction):
+    def describe(self):
+        return _('Fix pins for meer5 HDMI/DP audio output.')
+    
+    def __init__(self):
+        self.modprobefile = '/etc/modprobe.d/system76-meer5-audio.conf'
+        self.patchfile = '/lib/firmware/system76-meer5-audio.fw'
+    
+    def get_isneeded(self):
+        if not (os.path.exists(self.modprobefile) and os.path.exists(self.patchfile)):
+            return True
+        else:
+            return False
+    
+    def perform(self):
+        modprobecontent = 'options snd-hda-intel patch=system76-meer5-audio.fw'
+        atomic_write(self.modprobefile, modprobecontent)
+        patchcontent = '[codec]\n0x8086280b 0x80860101 2\n\n'
+        patchcontent += '[pincfg]\n0x05 0x18560070\n0x06 0x18560070\n0x07 0x18560070\n'
+        atomic_write(self.patchfile, patchcontent)

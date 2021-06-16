@@ -539,6 +539,7 @@ PRODUCTS = {
         'name': 'Meerkat',
         'drivers': [
             actions.headset_meer5_fixup,
+            actions.meer5_audio_hdajackretask,
         ],
     },
     'meer6': {
@@ -988,6 +989,12 @@ PRODUCTS = {
             actions.usb_audio_ignore_ctl_error,
             actions.remove_usb_audio_load_microphone,
             actions.remove_usb_audio_load_spdif,
+        ],
+    },
+    'thelio-mira-b1': {
+        'name': 'Thelio Mira',
+        'drivers': [
+            actions.integrated_11th_gen_intel_fix,
         ],
     },
     'thelio-mira-r1': {
