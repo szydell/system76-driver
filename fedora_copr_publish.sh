@@ -7,7 +7,7 @@
 #		init
 
 # config
-outdir="$(pwd)/.rpkg-build"
+export outdir="$(pwd)/.rpkg-build"
 
 # verification
 [ -f debian/changelog ] || { echo "No debian/changelog found."; exit 1; }
@@ -18,7 +18,7 @@ git fetch upstream
 git checkout master
 git merge upstream/master
 
-
+[ -d ${outdir} ] && rm -rf ${outdir}
 
 version_in_changelog=$(grep -E "system76-driver \([[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+\)" debian/changelog | head -1)
 _tmp=${version_in_changelog%%)*}
