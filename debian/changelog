@@ -1,3 +1,15 @@
+system76-driver (20.04.40) focal; urgency=low
+
+  * Fix line-in on mira-b1
+
+ -- leviport <levi@system76.com>  Wed, 14 Jul 2021 17:20:01 -0600
+
+system76-driver (20.04.39) focal; urgency=low
+
+  * Add gaze16-3050, gaze16-3060
+
+ -- Jeremy Soller <jeremy@system76.com>  Tue, 13 Jul 2021 10:24:07 -0600
+
 system76-driver (20.04.38) focal; urgency=low
 
   * FileAction: Create parent directories if necessary
