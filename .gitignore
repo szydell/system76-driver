@@ -6,3 +6,5 @@
 /debian/*debhelper*
 /debian/*.substvars
 __pycache__
+/.rpkg-build/
+
