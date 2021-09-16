@@ -16,7 +16,8 @@ export outdir="$(pwd)/.rpkg-build"
 git fetch upstream
 # merge
 git checkout master
-git merge upstream/master
+git merge upstream/master -m "fetch upstream" --log
+
 
 [ -d ${outdir} ] && rm -rf ${outdir}
 
