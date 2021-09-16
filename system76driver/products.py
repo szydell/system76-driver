@@ -647,6 +647,13 @@ PRODUCTS = {
             actions.i915_initramfs,
         ],
     },
+    'oryp8': {
+        'name': 'Oryx Pro',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+            actions.i915_initramfs,
+        ],
+    },
 
     # Pangolin:
     'panp4i': {
@@ -686,6 +693,12 @@ PRODUCTS = {
         'name': 'Pangolin',
         'drivers': [
             actions.pang10_nvme_fix,
+        ],
+    },
+    'pang11': {
+        'name': 'Pangolin',
+        'drivers': [
+            actions.i8042_nomux,
         ],
     },
     #'panv1': {'name': 'Pangolin Value'},  # FIXME: Not in model.py
