@@ -1,3 +1,15 @@
+system76-driver (20.04.45) focal; urgency=low
+
+  * Set microphone device for thelio-major-r2.2
+
+ -- Jeremy Soller <jeremy@system76.com>  Mon, 22 Nov 2021 13:31:23 -0700
+
+system76-driver (20.04.44) focal; urgency=low
+
+  * Add gaze16-3060-b
+
+ -- Jeremy Soller <jeremy@system76.com>  Tue, 02 Nov 2021 12:09:27 -0600
+
 system76-driver (20.04.43) focal; urgency=low
 
   * lemp9: Add intel_idle.max_cstate=4 kernel parameter to fix freezes
