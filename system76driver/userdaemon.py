@@ -143,6 +143,7 @@ class UsbAudio:
             # thelio-major-r2 revision 1.2 has a different USB audio codec
             self.name = "Audio"
             self.mic_dev = 2
+            self.line_in_dev = 1
         else:
             self.mic_dev = 1
         if self.model.startswith("thelio-major-r2"):
