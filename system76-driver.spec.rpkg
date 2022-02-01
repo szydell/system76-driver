@@ -2,7 +2,7 @@
 # vim: syntax=spec
 
 Name:       {{{ git_dir_name }}}
-Version:    20.04.48
+Version:    20.04.48) focal; urgency=low
 Release:    1
 Summary:    System76 Driver CLI and GTK installer 
 License:    GPLv3
