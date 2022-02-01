@@ -23,7 +23,7 @@ git merge upstream/master -m "fetch upstream" --log
 
 version_in_changelog=$(grep -E "system76-driver \([[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+" debian/changelog | head -1)
 _tmp=${version_in_changelog%%)*}
-_tmp=${version_in_changelog%%~*}
+_tmp=${_tmp%%~*}
 version=${_tmp##*\(}
 
 _tmp=$(git tag --list system76-driver-"$version"-'*' | sort -n -t '-' -k 4 -r | head -1)
