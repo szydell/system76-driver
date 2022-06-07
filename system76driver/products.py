@@ -326,6 +326,18 @@ PRODUCTS = {
             actions.blacklist_nvidia_i2c,
         ],
     },
+    'gaze17-3050': {
+        'name': 'Gazelle',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+        ],
+    },
+    'gaze17-3060-b': {
+        'name': 'Gazelle',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+        ],
+    },
     'gazu1': {
         'name': 'Gazelle Ultra',
         'drivers': [
@@ -958,6 +970,10 @@ PRODUCTS = {
         'name': 'Thelio',
         'drivers': [],
     },
+    'thelio-b3': {
+        'name': 'Thelio',
+        'drivers': [],
+    },
     'thelio-r1': {
         'name': 'Thelio',
         'drivers': [],
@@ -1034,7 +1050,19 @@ PRODUCTS = {
             actions.integrated_11th_gen_intel_fix,
         ],
     },
+    'thelio-mira-b2': {
+        'name': 'Thelio Mira',
+        'drivers': [],
+    },
+    'thelio-mira-b3': {
+        'name': 'Thelio Mira',
+        'drivers': [],
+    },
     'thelio-mira-r1': {
+        'name': 'Thelio Mira',
+        'drivers': [],
+    },
+    'thelio-mira-r2': {
         'name': 'Thelio Mira',
         'drivers': [],
     },
