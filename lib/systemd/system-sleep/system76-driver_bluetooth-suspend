@@ -1,0 +1,34 @@
+#!/bin/sh
+
+set -e
+
+# Do not run if pop-default-settings patch is present
+if [ -x /lib/systemd/system-sleep/pop-default-settings_bluetooth-suspend ]
+then
+    exit 0
+fi
+
+BT_BLOCK_PATH=/run/bluetooth.blocked
+BT_STATES_PATH=/var/lib/systemd/rfkill/
+BT_TMP_PATH=/tmp/
+
+case "$2" in
+    suspend | hybrid-sleep)
+        case "$1" in
+            pre)
+                if rfkill -o ID,TYPE,SOFT | grep -q -E 'bluetooth\s+unblocked'; then
+                    cp "$BT_STATES_PATH"*bluetooth "$BT_TMP_PATH"
+                    rfkill block bluetooth
+                else
+                    > "$BT_BLOCK_PATH"
+                fi
+                ;;
+            post)
+                cp -f "$BT_TMP_PATH"*bluetooth "$BT_STATES_PATH" 2> /dev/null
+                [ ! -f "$BT_BLOCK_PATH" ] && rfkill unblock bluetooth
+                rm -f "$BT_BLOCK_PATH" 2> /dev/null
+                rm -f "$BT_TMP_PATH"*bluetooth 2> /dev/null
+                ;;
+        esac
+        ;;
+esac

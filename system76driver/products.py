@@ -162,6 +162,10 @@ PRODUCTS = {
         'name': 'Darter Pro',
         'drivers': [],
     },
+    'darp8': {
+        'name': 'Darter Pro',
+        'drivers': [],
+    },
 
     # Galago:
     'galu1': {
@@ -483,6 +487,10 @@ PRODUCTS = {
         'name': 'Lemur Pro',
         'drivers': [],
     },
+    'lemp11': {
+        'name': 'Lemur Pro',
+        'drivers': [],
+    },
 
     # Leopard:
     'leo1': {
@@ -672,6 +680,13 @@ PRODUCTS = {
         ],
     },
     'oryp8': {
+        'name': 'Oryx Pro',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+            actions.i915_initramfs,
+        ],
+    },
+    'oryp9': {
         'name': 'Oryx Pro',
         'drivers': [
             actions.blacklist_nvidia_i2c,
