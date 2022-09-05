@@ -162,7 +162,7 @@ class UI:
         tgz = create_logs(self.args.home)
         GLib.idle_add(self.on_create_complete, tgz)
 
-    def on_create_complete(self, tgz):
+    def on_create_complete(self, tgx):
         self.thread.join()
         self.thread = None
         self.set_sensitive(True)
