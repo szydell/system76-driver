@@ -1,3 +1,21 @@
+system76-driver (20.04.75) focal; urgency=low
+
+  * Add thelio-major-r4
+
+ -- leviport <levi@system76.com>  Thu, 16 Feb 2023 15:17:18 -0700
+
+system76-driver (20.04.74) focal; urgency=low
+
+  * Add thelio-b5
+
+ -- leviport <levi@system76.com>  Mon, 06 Feb 2023 15:46:31 -0700
+
+system76-driver (20.04.73) focal; urgency=low
+
+  * Remove user audio daemon. Upstreamed into ALSA.
+
+ -- leviport <levi@system76.com>  Fri, 03 Feb 2023 12:31:33 -0700
+
 system76-driver (20.04.72) focal; urgency=low
 
   * Blacklist psmouse on TGL and ADL
