@@ -1,3 +1,33 @@
+system76-driver (20.04.79) focal; urgency=low
+
+  * Add galp7
+  * Add darp9
+  * Add lemp12
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Thu, 11 May 2023 13:08:50 -0600
+
+system76-driver (20.04.78) focal; urgency=low
+
+  * Add thelio-mira-b4.1
+
+ -- leviport <levi@system76.com>  Wed, 22 Mar 2023 17:36:18 -0600
+
+system76-driver (20.04.77) focal; urgency=low
+
+  * Add addw3
+  * Add bonw15
+  * Add gaze18
+  * Add oryp11
+  * Add serw13
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Tue, 21 Mar 2023 15:03:40 -0600
+
+system76-driver (20.04.76) focal; urgency=low
+
+  * Add meer7
+
+ -- leviport <levi@system76.com>  Tue, 21 Mar 2023 11:54:47 -0600
+
 system76-driver (20.04.75) focal; urgency=low
 
   * Add thelio-major-r4
