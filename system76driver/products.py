@@ -652,6 +652,10 @@ PRODUCTS = {
         'name': 'Meerkat',
         'drivers': [],
     },
+    'meer8': {
+        'name': 'Meerkat',
+        'drivers': [],
+    },
 
     # Oryx:
     'orxp1': {
@@ -819,6 +823,12 @@ PRODUCTS = {
         ],
     },
     'pang12': {
+        'name': 'Pangolin',
+        'drivers': [
+            actions.touchpad_use_areas,
+        ],
+    },
+    'pang13': {
         'name': 'Pangolin',
         'drivers': [
             actions.touchpad_use_areas,
@@ -1211,6 +1221,10 @@ PRODUCTS = {
     },
     'thelio-mira-r3': {
         'name': 'Thelio Mira',
+        'drivers': [],
+    },
+    'thelio-spark-b1': {
+        'name': 'Thelio Spark',
         'drivers': [],
     },
 
