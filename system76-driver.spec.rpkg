@@ -41,7 +41,6 @@ System76 Driver
 %pyproject_wheel
 #CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
 
-%pyproject_save_files system76driver
 
 %install
 rm -rf %{buildroot}
