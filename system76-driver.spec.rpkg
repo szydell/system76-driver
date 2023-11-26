@@ -16,14 +16,13 @@ VCS:        {{{ git_dir_vcs }}}
 # and returns its filename. The tarball will be used to build the rpm.
 Source:     {{{ git_dir_pack }}}
 
+BuildArch:      noarch
+
 #Packages required for build
-#BuildRequires: dbus-devel
 BuildRequires: python3-devel
 
-#Packages required to work
-#Requires:
-
-%{?python_enable_dependency_generator}
+%generate_buildrequires
+%pyproject_buildrequires
 
 # More detailed description of the package
 %description
@@ -39,15 +38,18 @@ System76 Driver
 {{{ git_dir_setup_macro }}}
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
+%pyproject_wheel
+#CFLAGS="$RPM_OPT_FLAGS" %{__python3} setup.py build
 
+%pyproject_save_files system76driver
 
 %install
 rm -rf %{buildroot}
 install -D -m 0755 system76-driver-pkexec -t "%{buildroot}%{_bindir}"
 install -D -m 0644 com.system76.pkexec.system76-driver.policy -t "%{buildroot}%{_datadir}/polkit-1/actions/"
 
-%{__python3} setup.py install --skip-build --root $RPM_BUILD_ROOT
+#  %{__python3} setup.py install --skip-build --root $RPM_BUILD_ROOT
+%pyproject_install
 rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
 
 # Those files will be in the rpm
@@ -58,7 +60,7 @@ rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
 #from setup.py
 %{_bindir}/system76-driver
 %{_bindir}/system76-driver-cli
-%{python3_sitelib}/system76driver*.egg-info
+%{python3_sitelib}/system76driver*.dist-info
 %{python3_sitelib}/system76driver/*
 %{_datadir}/applications/system76-driver.desktop
 %{_datadir}/icons/hicolor/scalable/apps/system76-driver.svg
