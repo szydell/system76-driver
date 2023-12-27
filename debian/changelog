@@ -1,3 +1,9 @@
+system76-driver (20.04.84) focal; urgency=low
+
+  * Add thelio-major-r5
+
+ -- leviport <levi@system76.com>  Tue, 26 Dec 2023 09:00:10 -0700
+
 system76-driver (20.04.83) focal; urgency=low
 
   * Add pang14
