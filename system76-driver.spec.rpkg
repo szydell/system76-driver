@@ -2,7 +2,7 @@
 # vim: syntax=spec
 
 Name:       {{{ git_dir_name }}}
-Version:    20.04.84
+Version:    20.04.85
 Release:    1
 Summary:    System76 Driver CLI and GTK installer 
 License:    GPLv3
@@ -46,6 +46,9 @@ System76 Driver
 rm -rf %{buildroot}
 install -D -m 0755 system76-driver-pkexec -t "%{buildroot}%{_bindir}"
 install -D -m 0644 com.system76.pkexec.system76-driver.policy -t "%{buildroot}%{_datadir}/polkit-1/actions/"
+install -D -m 0700 system76-nm-restart  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
+install -D -m 0700 system76-thunderbolt-reload  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
+install -D -m 0700 system76-atlantic-reload  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
 
 #  %{__python3} setup.py install --skip-build --root $RPM_BUILD_ROOT
 %pyproject_install
@@ -63,7 +66,7 @@ rm -rf %{buildroot}%{python3_sitelib}/setuptools/tests
 %{python3_sitelib}/system76driver/*
 %{_datadir}/applications/system76-driver.desktop
 %{_datadir}/icons/hicolor/scalable/apps/system76-driver.svg
-
+%{_prefix}/lib/systemd/system-sleep/*
 # Changelog
 %changelog
 {{{ git_dir_changelog }}}
