@@ -45,6 +45,13 @@ PRODUCTS = {
             actions.blacklist_psmouse,
         ],
     },
+    'addw4': {
+        'name': 'Adder WS',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+            actions.blacklist_psmouse,
+        ],
+    },
 
     # Bonobo:
     'bonp1': {
@@ -547,6 +554,12 @@ PRODUCTS = {
             actions.blacklist_psmouse,
         ],
     },
+    'lemp13': {
+        'name': 'Lemur Pro',
+        'drivers': [
+            actions.blacklist_psmouse,
+        ],
+    },
 
     # Leopard:
     'leo1': {
@@ -768,6 +781,14 @@ PRODUCTS = {
         ],
     },
     'oryp11': {
+        'name': 'Oryx Pro',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+            actions.i915_initramfs,
+            actions.blacklist_psmouse,
+        ],
+    },
+    'oryp12': {
         'name': 'Oryx Pro',
         'drivers': [
             actions.blacklist_nvidia_i2c,
