@@ -194,6 +194,18 @@ PRODUCTS = {
             actions.blacklist_psmouse,
         ],
     },
+    'darp10': {
+        'name': 'Darter Pro',
+        'drivers': [
+            actions.blacklist_psmouse,
+        ],
+    },
+    'darp10-b': {
+        'name': 'Darter Pro',
+        'drivers': [
+            actions.blacklist_psmouse,
+        ],
+    },
 
     # Galago:
     'galu1': {
@@ -560,6 +572,12 @@ PRODUCTS = {
             actions.blacklist_psmouse,
         ],
     },
+    'lemp13-b': {
+        'name': 'Lemur Pro',
+        'drivers': [
+            actions.blacklist_psmouse,
+        ],
+    },
 
     # Leopard:
     'leo1': {
@@ -666,6 +684,10 @@ PRODUCTS = {
         'drivers': [],
     },
     'meer8': {
+        'name': 'Meerkat',
+        'drivers': [],
+    },
+    'meer8-b': {
         'name': 'Meerkat',
         'drivers': [],
     },

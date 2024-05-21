@@ -1,3 +1,22 @@
+system76-driver (20.04.91) focal; urgency=low
+
+  * Add lemp13-b
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Fri, 17 May 2024 11:02:09 -0600
+
+system76-driver (20.04.90) focal; urgency=low
+
+  * Add meer8-b
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Wed, 08 May 2024 13:15:04 -0600
+
+system76-driver (20.04.89) focal; urgency=low
+
+  * Add darp10
+  * Add darp10-b
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Tue, 07 May 2024 12:26:24 -0600
+
 system76-driver (20.04.88) focal; urgency=low
 
   * Add thelio-r4
