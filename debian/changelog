@@ -1,3 +1,9 @@
+system76-driver (20.04.92) focal; urgency=low
+
+  * Add thelio-mega-r3
+
+ -- leviport <levi@system76.com>  Mon, 01 Jul 2024 16:02:16 -0600
+
 system76-driver (20.04.91) focal; urgency=low
 
   * Add lemp13-b
