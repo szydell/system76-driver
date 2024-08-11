@@ -44,7 +44,7 @@ System76 Driver
 
 %install
 rm -rf %{buildroot}
-install -D -m 0755 system76-driver-pkexec -t "%{buildroot}%{_bindir}"
+#install -D -m 0755 system76-driver-pkexec -t "%{buildroot}%{_bindir}"
 install -D -m 0644 com.system76.pkexec.system76-driver.policy -t "%{buildroot}%{_datadir}/polkit-1/actions/"
 install -D -m 0700 system76-nm-restart  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
 install -D -m 0700 system76-thunderbolt-reload  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
