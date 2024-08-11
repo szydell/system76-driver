@@ -48,7 +48,7 @@ rm -rf %{buildroot}
 install -D -m 0644 com.system76.pkexec.system76-driver.policy -t "%{buildroot}%{_datadir}/polkit-1/actions/"
 install -D -m 0700 system76-nm-restart  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
 install -D -m 0700 system76-thunderbolt-reload  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
-install -D -m 0700 system76-atlantic-reload  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
+#install -D -m 0700 system76-atlantic-reload  -t "%{buildroot}%{_prefix}/lib/systemd/system-sleep/"
 
 #  %{__python3} setup.py install --skip-build --root $RPM_BUILD_ROOT
 %pyproject_install
