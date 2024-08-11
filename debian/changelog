@@ -1,3 +1,11 @@
+system76-driver (20.04.93) focal; urgency=low
+
+  * Remove system76-atlantic-reload suspend hook
+  * Add bonw15-b
+  * Support running GUI as non-root
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Fri, 19 Jul 2024 19:24:32 -0600
+
 system76-driver (20.04.92) focal; urgency=low
 
   * Add thelio-mega-r3

@@ -130,6 +130,7 @@ TABLES = {
         'bonw13': 'bonw13',
         'bonw14': 'bonw14',
         'bonw15': 'bonw15',
+        'bonw15-b': 'bonw15-b',
         'darp5': 'darp5',
         'darp6': 'darp6',
         'darp7': 'darp7',
@@ -326,6 +327,7 @@ TABLES = {
 
 
 def dmidecode(keyword):
+    #TODO: will fail if used by GUI when not running as root
     cmd = ['dmidecode', '-s', keyword]
     return SubProcess.check_output(cmd).decode('utf-8').strip()
 
