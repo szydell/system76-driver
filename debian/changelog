@@ -1,3 +1,33 @@
+system76-driver (20.04.98) focal; urgency=low
+
+  * Depend on virtual package for system76-power applet
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Wed, 16 Oct 2024 14:28:09 -0600
+
+system76-driver (20.04.97) focal; urgency=low
+
+  * Add thelio-spark-r1
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Wed, 16 Oct 2024 11:14:55 -0600
+
+system76-driver (20.04.96) focal; urgency=low
+
+  * Add thelio-astra-a1
+
+ -- Tim Crawford <tcrawford@system76.com>  Tue, 08 Oct 2024 12:16:39 -0600
+
+system76-driver (20.04.95) focal; urgency=low
+
+  * Only require some dependencies on amd64
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Thu, 22 Aug 2024 07:39:01 -0600
+
+system76-driver (20.04.94) focal; urgency=low
+
+  * Rebuild for arm64
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Fri, 16 Aug 2024 14:03:37 -0600
+
 system76-driver (20.04.93) focal; urgency=low
 
   * Remove system76-atlantic-reload suspend hook

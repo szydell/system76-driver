@@ -1132,6 +1132,10 @@ PRODUCTS = {
     },
 
     #Thelio:
+    'thelio-astra-a1': {
+        'name': 'Thelio Astra',
+        'drivers': [],
+    },
     'thelio-b1': {
         'name': 'Thelio',
         'drivers': [],
@@ -1289,6 +1293,10 @@ PRODUCTS = {
         'drivers': [],
     },
     'thelio-spark-b1': {
+        'name': 'Thelio Spark',
+        'drivers': [],
+    },
+    'thelio-spark-r1': {
         'name': 'Thelio Spark',
         'drivers': [],
     },
