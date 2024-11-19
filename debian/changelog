@@ -1,3 +1,9 @@
+system76-driver (20.04.99) focal; urgency=low
+
+  * Bump nvidia-driver to 550
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Wed, 23 Oct 2024 11:08:35 -0600
+
 system76-driver (20.04.98) focal; urgency=low
 
   * Depend on virtual package for system76-power applet
