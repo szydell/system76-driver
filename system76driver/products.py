@@ -887,6 +887,12 @@ PRODUCTS = {
             actions.touchpad_use_areas,
         ],
     },
+    'pang15': {
+        'name': 'Pangolin',
+        'drivers': [
+            actions.touchpad_use_areas,
+        ],
+    },
     #'panv1': {'name': 'Pangolin Value'},  # FIXME: Not in model.py
     'panv2': {
         'name': 'Pangolin Value',
@@ -1255,6 +1261,10 @@ PRODUCTS = {
         'drivers': [],
     },
     'thelio-mega-r3': {
+        'name': 'Thelio Mega',
+        'drivers': [],
+    },
+    'thelio-mega-r4': {
         'name': 'Thelio Mega',
         'drivers': [],
     },
