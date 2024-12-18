@@ -695,6 +695,10 @@ PRODUCTS = {
         'name': 'Meerkat',
         'drivers': [],
     },
+    'meer9': {
+        'name': 'Meerkat',
+        'drivers': [],
+    },
 
     # Oryx:
     'orxp1': {
@@ -1140,7 +1144,9 @@ PRODUCTS = {
     #Thelio:
     'thelio-astra-a1': {
         'name': 'Thelio Astra',
-        'drivers': [],
+        'drivers': [
+            actions.mask_suspend,
+        ],
     },
     'thelio-b1': {
         'name': 'Thelio',
@@ -1302,11 +1308,19 @@ PRODUCTS = {
         'name': 'Thelio Mira',
         'drivers': [],
     },
+    'thelio-mira-r4': {
+        'name': 'Thelio Mira',
+        'drivers': [],
+    },
     'thelio-spark-b1': {
         'name': 'Thelio Spark',
         'drivers': [],
     },
     'thelio-spark-r1': {
+        'name': 'Thelio Spark',
+        'drivers': [],
+    },
+    'thelio-spark-r2': {
         'name': 'Thelio Spark',
         'drivers': [],
     },
