@@ -22,6 +22,7 @@ Base class for system changes the driver can perform.
 """
 
 from gettext import gettext as _
+import glob
 import os
 from os import path
 import stat
@@ -1625,6 +1626,21 @@ class blacklist_psmouse(FileAction):
     def describe(self):
         return _('Avoid touchpad issues caused by PS/2 interface')
 
+class remove_blacklist_psmouse(FileAction):
+    relpath = ('etc', 'modprobe.d', 'blacklist-psmouse.conf')
+
+    def describe(self):
+        return _('Remove PS/2 blacklist for models with touchpad fix')
+
+    def get_isneeded(self):
+        return os.path.exists(self.filename)
+
+    def perform(self):
+        try:
+            os.remove(self.filename)
+        except:
+            pass
+
 class mask_suspend(Action):
     target_names = ['hibernate.target', 'hybrid-sleep.target', 'sleep.target', 'suspend.target']
 
@@ -1650,3 +1666,19 @@ class mask_suspend(Action):
         for target_name in self.target_names:
             command.append(target_name)
         SubProcess.check_call(command)
+
+class bmc_usb_ethernet(FileAction):
+    relpath = ('etc', 'network', 'interfaces.d', 'system76-driver_bmc-usb-ethernet')
+    _content = None
+    
+    @property
+    def content(self):
+        if self._content is None:
+            self._content = "# This file was created by system76-driver\n"
+            for net_sys in glob.glob("/sys/bus/usb/drivers/cdc_ether/*/net/*"):
+                net_name = path.basename(net_sys)
+                self._content += "iface " + net_name + " inet manual\n"
+        return self._content
+
+    def describe(self):
+        return _('Manual configuration of BMC USB ethernet')
