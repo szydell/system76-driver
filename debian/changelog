@@ -1,3 +1,15 @@
+system76-driver (24.04.4) noble; urgency=low
+
+  * Add bonw16
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Thu, 27 Mar 2025 15:04:04 -0600
+
+system76-driver (24.04.3) noble; urgency=low
+
+  * Add darp11, darp11-b
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Thu, 20 Mar 2025 14:52:08 -0600
+
 system76-driver (24.04.2) noble; urgency=low
 
   * Support NVIDIA 570 driver

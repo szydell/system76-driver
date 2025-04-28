@@ -145,6 +145,10 @@ PRODUCTS = {
         'name': 'Bonobo WS',
         'drivers': [],
     },
+    'bonw16': {
+        'name': 'Bonobo WS',
+        'drivers': [],
+    },
 
     # Darter:
     'daru1': {
@@ -209,6 +213,14 @@ PRODUCTS = {
         'drivers': [
             actions.remove_blacklist_psmouse,
         ],
+    },
+    'darp11': {
+        'name': 'Darter Pro',
+        'drivers': [],
+    },
+    'darp11-b': {
+        'name': 'Darter Pro',
+        'drivers': [],
     },
 
     # Galago:
