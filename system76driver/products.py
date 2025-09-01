@@ -42,14 +42,20 @@ PRODUCTS = {
         'name': 'Adder WS',
         'drivers': [
             actions.blacklist_nvidia_i2c,
-            actions.remove_blacklist_psmouse,
+            actions.blacklist_psmouse,
         ],
     },
     'addw4': {
         'name': 'Adder WS',
         'drivers': [
             actions.blacklist_nvidia_i2c,
-            actions.remove_blacklist_psmouse,
+            actions.blacklist_psmouse,
+        ],
+    },
+    'addw5': {
+        'name': 'Adder WS',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
         ],
     },
 
@@ -423,6 +429,12 @@ PRODUCTS = {
             actions.remove_blacklist_psmouse,
         ],
     },
+    'gaze20': {
+        'name': 'Gazelle',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+        ],
+    },
     'gazu1': {
         'name': 'Gazelle Ultra',
         'drivers': [
@@ -708,6 +720,14 @@ PRODUCTS = {
         'drivers': [],
     },
     'meer9': {
+        'name': 'Meerkat',
+        'drivers': [],
+    },
+    'meer10': {
+        'name': 'Meerkat',
+        'drivers': [],
+    },
+    'meer10-b': {
         'name': 'Meerkat',
         'drivers': [],
     },

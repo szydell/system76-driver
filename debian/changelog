@@ -1,3 +1,29 @@
+system76-driver (24.04.9) noble; urgency=low
+
+  * addw3: Re-add psmouse blacklist
+  * addw4: Re-add psmouse blacklist
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Wed, 30 Jul 2025 15:37:57 -0600
+
+system76-driver (24.04.8) noble; urgency=low
+
+  * Add gaze20
+
+ -- leviport <levi@system76.com>  Mon, 07 Jul 2025 07:07:17 -0600
+
+system76-driver (24.04.7) noble; urgency=low
+
+  * Add addw5
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Tue, 01 Jul 2025 11:28:25 -0600
+
+system76-driver (24.04.6) noble; urgency=low
+
+  * Add meer10
+  * Add meer10-b
+
+ -- leviport <levi@system76.com>  Mon, 30 Jun 2025 10:52:01 -0600
+
 system76-driver (24.04.5) noble; urgency=low
 
   * Add serw14
