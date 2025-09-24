@@ -1,3 +1,27 @@
+system76-driver (24.04.13) noble; urgency=low
+
+  * Set NVreg_DynamicPowerManagement on affected models
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Tue, 23 Sep 2025 10:08:19 -0600
+
+system76-driver (24.04.12) noble; urgency=low
+
+  * Add oryp13
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Tue, 23 Sep 2025 09:21:13 -0600
+
+system76-driver (24.04.11) noble; urgency=low
+
+  * Support NVIDIA 580 driver
+
+ -- Jeremy Soller <jackpot51@gmail.com>  Mon, 22 Sep 2025 19:31:47 -0600
+
+system76-driver (24.04.10) noble; urgency=low
+
+  * Add thelio-spark-r3
+
+ -- leviport <levi@system76.com>  Tue, 09 Sep 2025 14:19:55 -0600
+
 system76-driver (24.04.9) noble; urgency=low
 
   * addw3: Re-add psmouse blacklist
