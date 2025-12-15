@@ -2,8 +2,8 @@
 # vim: syntax=spec
 
 Name:       {{{ git_dir_name }}}
-Version:    24.04.13
-Release:    1
+Version:    24.04.14
+Release:    3
 Summary:    System76 Driver CLI and GTK installer 
 License:    GPLv3
 URL:        https://github.com/szydell/system76-driver
