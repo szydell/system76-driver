@@ -59,6 +59,13 @@ PRODUCTS = {
             actions.blacklist_nvidia_i2c,
         ],
     },
+    'addp6': {
+        'name': 'Adder Pro',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+            actions.xe_dpcd_vesa_controls,
+        ],
+    },
 
     # Bonobo:
     'bonp1': {
@@ -611,6 +618,18 @@ PRODUCTS = {
             actions.remove_blacklist_psmouse,
         ],
     },
+    'lemp14': {
+        'name': 'Lemur Pro',
+        'drivers': [
+            actions.blacklist_psmouse,
+        ],
+    },
+    'lemp14-b': {
+        'name': 'Lemur Pro',
+        'drivers': [
+            actions.blacklist_psmouse,
+        ],
+    },
 
     # Leopard:
     'leo1': {
@@ -869,6 +888,12 @@ PRODUCTS = {
             actions.blacklist_nvidia_i2c,
         ],
     },
+    'oryp14': {
+        'name': 'Oryx Pro',
+        'drivers': [
+            actions.blacklist_nvidia_i2c,
+        ],
+    },
 
     # Pangolin:
     'panp4i': {
@@ -920,30 +945,35 @@ PRODUCTS = {
         'name': 'Pangolin',
         'drivers': [
             actions.touchpad_use_areas,
+            actions.wifi_reload,
         ],
     },
     'pang13': {
         'name': 'Pangolin',
         'drivers': [
             actions.touchpad_use_areas,
+            actions.wifi_reload,
         ],
     },
     'pang14': {
         'name': 'Pangolin',
         'drivers': [
             actions.touchpad_use_areas,
+            actions.wifi_reload,
         ],
     },
     'pang15': {
         'name': 'Pangolin',
         'drivers': [
             actions.touchpad_use_areas,
+            actions.wifi_reload,
         ],
     },
     'panp16': {
         'name': 'Pangolin Pro',
         'drivers': [
             actions.touchpad_use_areas,
+            actions.wifi_reload,
         ],
     },
     #'panv1': {'name': 'Pangolin Value'},  # FIXME: Not in model.py
